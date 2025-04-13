@@ -14,12 +14,12 @@ export default function Skills() {
       <TitleSkills>My Skills</TitleSkills>
       <SkillGrid>
         <SkillItem>Blender</SkillItem>
-        <SkillItem>Unreal Engine</SkillItem>
+        <SkillItem>Substance Painter</SkillItem>
         <SkillItem>Roblox Studio</SkillItem>
         <SkillItem>3D Modeling</SkillItem>
         <SkillItem>Texturing</SkillItem>
         <SkillItem>UV Mapping</SkillItem>
-        <SkillItem>Level Design</SkillItem>
+        <SkillItem>Texture Baking</SkillItem>
         <SkillItem>Audio</SkillItem>
       </SkillGrid>
     </SkillsSection>

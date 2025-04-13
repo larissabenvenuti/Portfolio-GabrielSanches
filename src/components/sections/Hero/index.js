@@ -15,16 +15,18 @@ export default function Hero() {
       <Title>Gabriel Sanches</Title>
       <Subtitle>3D Vehicle Artist</Subtitle>
       <Bio>
-        Specialized in hyper-detailed 3D car modeling with experience in
-        Blender, Unreal Engine, and Roblox Studio. Focused on realism,
-        performance, and game-ready assets.
+        Specialized in low and midpoly vehicle models, as well as Texture
+        Baking, Substance Painter texturing and PBR assets.
       </Bio>
       <ButtonGroup>
-        <Button href="https://github.com/seuuser" target="_blank">
+        <Button href="https://github.com/EzoWasTaken" target="_blank">
           GitHub
         </Button>
-        <Button href="https://www.artstation.com/seuuser" target="_blank">
+        <Button href="https://www.artstation.com/ezosama" target="_blank">
           ArtStation
+        </Button>
+        <Button href="https://sketchfab.com/EzoYEAHH" target="_blank">
+        SketchFab
         </Button>
       </ButtonGroup>
     </HeroSection>

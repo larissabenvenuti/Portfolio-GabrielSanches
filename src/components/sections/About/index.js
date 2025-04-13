@@ -16,25 +16,25 @@ export default function About() {
 
       <ContentWrapper>
         <Photo>
-          <img src="/profile.jpg" alt="Gabriel Sanches" />
+          <img src="/assets/images/Profile.jpg" alt="Gabriel Sanches" />
         </Photo>
 
         <TextContent>
           <Paragraph>
             Hey! I'm Gabriel Sanches, a 3D Artist and Game Developer with strong
-            experience in Blender, Unreal Engine, and Roblox Studio. My main
+            experience in Blender and Substance painter. My main
             focus is realistic vehicle modeling for games and simulations.
           </Paragraph>
 
           <Paragraph>
             I love pushing polygon limits and optimizing assets for real-time
-            rendering. Whether it's creating detailed shaders or low-poly models
-            for mobile platforms, I'm always experimenting with new techniques.
+            rendering. Whether it's creating detailed models for Baking or low-poly models
+            for game use, I'm always experimenting with new techniques.
           </Paragraph>
 
           <Paragraph>
-            When I'm not working on 3D cars, you can find me exploring lighting
-            setups, animation, and physics inside game engines.
+            When I'm not working on 3D cars, you can find me working on my car and 
+            learning new techniques to achieve better quality models.
           </Paragraph>
         </TextContent>
       </ContentWrapper>

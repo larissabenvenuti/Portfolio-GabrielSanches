@@ -136,10 +136,9 @@ export const ContentWrapper = styled.div`
 export const Photo = styled.div`
   position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
+  height: 100%;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
   border: 2px solid ${colors.border};
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -153,10 +152,6 @@ export const Photo = styled.div`
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-
-    img {
-      transform: scale(1.03);
-    }
   }
 
   @media (max-width: 768px) {
