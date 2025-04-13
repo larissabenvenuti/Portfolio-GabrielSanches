@@ -17,6 +17,20 @@ export default function Projects() {
   const projectsList = [
     {
       sketchfabUid: "e0b3e758af03408da779023e383c1543",
+      title: "Chevrolet Corsa GSi",
+      year: "1994",
+      image: "/assets/images/Corsa_main.png",
+      tags: ["3D Modeling", "Blender"],
+      description: "Low-poly traffic model.",
+      highlights: [
+        "Custom shading workflow",
+        "Optimized topology",
+        "Game ready export",
+      ],
+      download: "#",
+    },
+    {
+      sketchfabUid: "e0b3e758af03408da779023e383c1543",
       title: "Citroen AX GTI",
       year: "1995",
       image: "/assets/images/AX_main.png",
