@@ -36,6 +36,9 @@ export default function Header() {
           <ListItem>
             <Link href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</Link>
           </ListItem>
+          <ListItem>
+            <Link href="#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+          </ListItem>
         </List>
       </Nav>
       

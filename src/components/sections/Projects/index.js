@@ -11,6 +11,7 @@ import {
   ProjectInfo,
   ProjectTitle,
   SeeMoreButton,
+  LoadMoreButton,
 } from "@/components/sections/Projects/projectsStyles";
 
 export default function Projects() {
@@ -326,6 +327,16 @@ export default function Projects() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(8);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleLoadMore = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setVisibleCount(prev => Math.min(prev + 8, projectsList.length));
+      setIsLoading(false);
+    }, 500);
+  };
 
   const handleNext = () => {
     setCurrentIndex((prev) =>
@@ -339,23 +350,33 @@ export default function Projects() {
     );
   };
 
+  const visibleProjects = projectsList.slice(0, visibleCount);
+  const canLoadMore = visibleCount < projectsList.length;
+
   return (
     <ProjectsContainer id="projects">
       <TitleProjects>My Projects</TitleProjects>
 
       <ProjectsGrid>
-        {projectsList.map((project, index) => (
-          <ProjectCard key={index} onClick={() => setCurrentIndex(index)}>
+        {visibleProjects.map((project, index) => (
+          <ProjectCard 
+            key={index} 
+            onClick={() => setCurrentIndex(index)}
+            data-aos="fade-up"
+            data-aos-delay={index % 8 * 100}
+          >
             <ProjectImage>
               <img
                 src={project.image}
                 alt={`${project.title} - 3D Model`}
                 width={400}
                 height={300}
+                loading={index > 3 ? "lazy" : "eager"}
               />
             </ProjectImage>
             <ProjectInfo>
               <ProjectTitle>{project.title}</ProjectTitle>
+              <p>{project.year}</p>
               <SeeMoreButton>
                 View Details
                 <svg
@@ -379,12 +400,23 @@ export default function Projects() {
         ))}
       </ProjectsGrid>
 
+      {canLoadMore && (
+        <LoadMoreButton 
+          onClick={handleLoadMore}
+          disabled={isLoading}
+        >
+          {isLoading ? 'Loading...' : 'Load More Projects'}
+        </LoadMoreButton>
+      )}
+
       {currentIndex !== null && (
         <Modal
           project={projectsList[currentIndex]}
           onClose={() => setCurrentIndex(null)}
           onNext={handleNext}
           onPrev={handlePrev}
+          totalProjects={projectsList.length}
+          currentProjectIndex={currentIndex}
         />
       )}
     </ProjectsContainer>

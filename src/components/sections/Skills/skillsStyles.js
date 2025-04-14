@@ -48,44 +48,19 @@ export const SkillsSection = styled.section`
   }
 `;
 
-export const TitleSkills = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  position: relative;
+export const TitleSkills = styled.h1`
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   text-align: center;
-  background: linear-gradient(
-    90deg,
-    ${colors.accentGradientStart},
-    ${colors.accentGradientEnd}
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: skew(-5deg);
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -1rem;
-    top: 50%;
-    width: 5px;
-    height: 70%;
-    background: ${colors.accent};
-    transform: translateY(-50%);
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  color: ${colors.accent};
+  font-weight: 500;
+  
+  &:before {
+    content: '/ ';
   }
-
-  @media (max-width: 768px) {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-  }
-
+  
   @media (max-width: 480px) {
-    font-size: 1.8rem;
-
-    &::before {
-      left: -0.5rem;
-      width: 3px;
-    }
+    font-size: 1.5rem;
   }
 `;
 

@@ -3,6 +3,22 @@
 import styled from "styled-components";
 import { colors } from "@/contexts/theme";
 
+export const TitleProjects = styled.h1`
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  color: ${colors.accent};
+  font-weight: 500;
+  
+  &:before {
+    content: '/ ';
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+`;
+
 export const ProjectTitle = styled.h3`
   font-size: 1.1rem;
   margin: 0;
@@ -128,35 +144,6 @@ export const ProjectsGrid = styled.div`
   }
 `;
 
-export const TitleProjects = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  position: relative;
-  text-align: center;
-  background: linear-gradient(
-    90deg,
-    ${colors.accentGradientStart},
-    ${colors.accentGradientEnd}
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: ${colors.accent};
-    margin: 0.5rem auto 0;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.6rem;
-    margin-bottom: 1.8rem;
-  }
-`;
-
 export const ProjectsContainer = styled.section`
   padding: 4rem 1.5rem;
   max-width: 1200px;
@@ -165,5 +152,29 @@ export const ProjectsContainer = styled.section`
 
   @media (max-width: 768px) {
     padding: 3.5rem 1rem;
+  }
+`;
+
+export const LoadMoreButton = styled.button`
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: ${colors.accent};
+  border: 1px solid ${colors.border};
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  
+  &:hover {
+    background-color: ${props => props.theme.colors.glowLight};
+    box-shadow: 0 0 10px ${props => props.theme.colors.glowStrong};
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 `;
