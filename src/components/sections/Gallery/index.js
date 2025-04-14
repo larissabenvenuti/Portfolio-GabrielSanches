@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -318,6 +318,22 @@ export default function PhotoGallery() {
     document.body.style.overflow = "auto";
   };
 
+  
+  const navigatePhotos = (direction) => {
+    const currentIndex = photoData.findIndex(
+      (photo) => photo.id === selectedPhoto.id
+    );
+    let newIndex;
+  
+    if (direction === "prev") {
+      newIndex = currentIndex === 0 ? photoData.length - 1 : currentIndex - 1;
+    } else {
+      newIndex = currentIndex === photoData.length - 1 ? 0 : currentIndex + 1;
+    }
+  
+    setSelectedPhoto(photoData[newIndex]);
+  };
+  
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleKeyDown = (e) => {
@@ -329,9 +345,9 @@ export default function PhotoGallery() {
           navigatePhotos("next");
         }
       };
-
+  
       window.addEventListener("keydown", handleKeyDown);
-
+  
       return () => {
         window.removeEventListener("keydown", handleKeyDown);
       };
@@ -343,21 +359,6 @@ export default function PhotoGallery() {
     : photoData;
   const visiblePhotos = filteredPhotos.slice(0, visibleCount);
   const canLoadMore = visibleCount < filteredPhotos.length;
-
-  const navigatePhotos = (direction) => {
-    const currentIndex = photoData.findIndex(
-      (photo) => photo.id === selectedPhoto.id
-    );
-    let newIndex;
-
-    if (direction === "prev") {
-      newIndex = currentIndex === 0 ? photoData.length - 1 : currentIndex - 1;
-    } else {
-      newIndex = currentIndex === photoData.length - 1 ? 0 : currentIndex + 1;
-    }
-
-    setSelectedPhoto(photoData[newIndex]);
-  };
 
   return (
     <PageContainer id="gallery">

@@ -1,4 +1,5 @@
-"use client";
+"use client"; 
+
 import { useTheme } from '@/contexts/themeContext';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { SwitchButton } from './toggleButtonStyles';
