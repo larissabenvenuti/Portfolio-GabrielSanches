@@ -109,7 +109,7 @@ const projectsList = [
     sketchfabUid: "be772162e96746d0a4470e52dc7fbb1d",
     title: "Volkswagen Gol 2000 GTi (G2)",
     year: "1999",
-    image: "/assets/images/Main/GTi2000_Main.png",
+    image: "/assets/images/Main/GTI2000_Main.png",
     tags: ["3D Modeling", "Blender"],
     description: "Low-poly traffic model. Made from reference pictures and blueprints. 26.3k tris. Also features alternative Specs: Gol SPECIAL",
     highlights: [
@@ -123,7 +123,7 @@ const projectsList = [
     sketchfabUid: "6aa4b6e393614851aa5583053bcf6d4c",
     title: "Volkswagen Gol GTi",
     year: "1993",
-    image: "/assets/images/Main/GOLGTi_main.png",
+    image: "/assets/images/Main/GOLGTI_main.png",
     tags: ["3D Modeling", "Blender"],
     description: "Low-poly traffic model. Made from reference pictures and blueprints. 51.7k tris due to the shape of the wheels, being BBS's they require a lot of tris.",
     highlights: [
