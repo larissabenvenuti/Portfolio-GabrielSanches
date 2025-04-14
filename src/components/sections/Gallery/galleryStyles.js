@@ -183,11 +183,11 @@ export const ModalCaption = styled.div`
   left: 0;
   width: 100%;
   padding: 1rem;
-  color: ${(props) => props.theme.colors.text};
+  color: #fff;
   background: linear-gradient(
     to top, 
-    ${(props) => props.theme.colors.backgroundAlt} 0%, 
-    ${(props) => props.theme.colors.backgroundAlt}80 80%, 
+    #000, 
+#161616, 
     transparent 100%
   );
   text-align: center;
