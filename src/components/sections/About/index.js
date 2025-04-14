@@ -8,6 +8,7 @@ import {
   Photo,
   TextContent,
   Paragraph,
+  TypewriterParagraph,
 } from "@/components/sections/About/aboutStyles";
 
 export default function About() {
@@ -27,22 +28,19 @@ export default function About() {
         </Photo>
 
         <TextContent>
-          <Paragraph>
-            Hey! I&apos;m Gabriel Sanches, a 3D Artist and Game Developer with
-            strong experience in Blender and Substance Painter. My main focus is
-            realistic vehicle modeling for games and simulations.
-          </Paragraph>
+          <TypewriterParagraph>
+            Hey! I&apos;m Gabriel Sanches.
+          </TypewriterParagraph>
 
           <Paragraph>
-            I love pushing polygon limits and optimizing assets for real-time
-            rendering. Whether it&apos;s creating detailed models for Baking or
-            low-poly models for game use, I&apos;m always experimenting with new
-            techniques.
-          </Paragraph>
-
-          <Paragraph>
-            When I&apos;m not working on 3D cars, you can find me working on my
-            car and learning new techniques to achieve better quality models.
+            I&apos;m a 3D Artist and Game Developer with strong experience in
+            Blender and Substance Painter. My main focus is realistic vehicle
+            modeling for games and simulations. I love pushing polygon limits
+            and optimizing assets for real-time rendering. Whether it&apos;s
+            creating detailed models for Baking or low-poly models for game use,
+            I&apos;m always experimenting with new techniques. When I&apos;m not
+            working on 3D cars, you can find me working on my car and learning
+            new techniques to achieve better quality models.
           </Paragraph>
         </TextContent>
       </ContentWrapper>

@@ -24,7 +24,6 @@ export const TitleGallery = styled.h1`
 
   &:before {
     content: "/ ";
-    color: ${(props) => props.theme.colors.textMuted};
   }
 
   @media (max-width: 480px) {

@@ -2,6 +2,8 @@ import React from "react";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
+import Kevin from "@/components/sections/Kevin";
+import Traffic from "@/components/sections/Traffic";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Gallery from "@/components/sections/Gallery";
@@ -14,6 +16,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Projects id="projects" />
+      <Kevin id="kevin"/>
+      <Traffic id="traffic"/>
       <About id="about" />
       <Skills id="skills" />
       <Gallery id="gallery"/>
