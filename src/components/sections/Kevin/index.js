@@ -13,13 +13,13 @@ import {
 export default function About() {
   return (
     <KevinSection id="kevin">
-      <TitleKevin>BeamNG.Drive: Kevin</TitleKevin>
+      <TitleKevin>BeamNG.Drive: Ibishu Kevin</TitleKevin>
 
       <ContentWrapper>
         <Photo>
           <Image
-            src="/assets/images/Profile.jpg"
-            alt="Gabriel Sanches"
+            src="/assets/images/Gallery/Kevo5.png"
+            alt="Kevo my beloved"
             width={300}
             height={300}
             style={{ objectFit: "cover" }}
@@ -28,21 +28,24 @@ export default function About() {
 
         <TextContent>
           <Paragraph>
-            Hey! I&apos;m Gabriel Sanches, a 3D Artist and Game Developer with
-            strong experience in Blender and Substance Painter. My main focus is
-            realistic vehicle modeling for games and simulations.
+            Kevo is my cute kei truck project I did to learn usage of Substance Painter
+            applied to BeamNG.Drive. It uses entirely new cab and bed, applied to vanilla
+            Pigeon chassis alongside Hydra engine models. 
           </Paragraph>
 
           <Paragraph>
-            I love pushing polygon limits and optimizing assets for real-time
-            rendering. Whether it&apos;s creating detailed models for Baking or
-            low-poly models for game use, I&apos;m always experimenting with new
-            techniques.
+            Kevin was already modelled as a Low-Poly first, so I had to add detail to the mesh
+            in texture. For that I used Substance Painter 3D to add detail to the paint via
+            orange peel on the outside visible panels and dirt and rust underneath.
           </Paragraph>
 
           <Paragraph>
-            When I&apos;m not working on 3D cars, you can find me working on my
-            car and learning new techniques to achieve better quality models.
+            The interior also received new parts, the dashboard was entirely redone aswell as
+            door cards. The bare metal also was texturized with details in the normal maps and 
+            dirt and rust in hard-to-reach spots. If you want to check for yourself check
+            https://www.beamng.com/resources/ibishu-kevin-kei-truck.30979/ or search for 
+            Ibishu Kevin on the in-game Repo. There will be more pictures in the Gallery aswell :)
+            
           </Paragraph>
         </TextContent>
       </ContentWrapper>
