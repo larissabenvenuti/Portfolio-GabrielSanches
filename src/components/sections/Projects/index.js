@@ -20,7 +20,7 @@ export default function Projects() {
       sketchfabUid: "91b0d2ca0b7546e78525e332182f8b8d",
       title: "Nissan L20ET Inline 6 Engine",
       year: "1981",
-      image: "/assets/images/Gallery/L20_main.png",
+      image: "/assets/images/Gallery/L20_Main.png",
       tags: ["3D Modeling", "Blender"],
       description: "Taken from the DR30 as a training exercise, textured this L20 model in Substance Painter and baked it to a low-poly variant ready to be used in-game. PBR.",
       highlights: [
@@ -36,7 +36,7 @@ export default function Projects() {
       year: "1988",
       image: "/assets/images/Main/BR800_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model, Textured using Substance Painter over the low-poly mesh.",
+      description: "Low-poly traffic model, Textured using Substance Painter over the low-poly mesh. Sits at 31.2k tris and features full PBR materials.",
       highlights: [
         "Substance Painter",
         "Optimized topology",
@@ -50,9 +50,10 @@ export default function Projects() {
       year: "1995",
       image: "/assets/images/Main/AX_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model made out of a Photoscan, sitting at 30k tris.",
       highlights: [
-        "Custom shading workflow",
+        "Retopology",
+        "Traffic",  
         "Optimized topology",
         "Game ready export",
       ],
@@ -64,9 +65,10 @@ export default function Projects() {
       year: "2000",
       image: "/assets/images/Main/Seicento_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model made out of a Photoscan of my friend's @Car_killer personal Fiat Seicento. 25.2K Tris",
       highlights: [
-        "Custom shading workflow",
+        "Retopology",
+        "Traffic",        
         "Optimized topology",
         "Game ready export",
       ],
@@ -78,7 +80,7 @@ export default function Projects() {
       year: "1992",
       image: "/assets/images/Main/Kadett_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model, made out of at least 3 or 4 different scans that when added made a full body to retopo.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -92,9 +94,10 @@ export default function Projects() {
       year: "2016",
       image: "/assets/images/Main/SanderoRS_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model. Made from a Scan of my IRL car. I decided to use more tris on this one due body shapes. 53k tris.",
       highlights: [
-        "Custom shading workflow",
+        "Retopology",
+        "Traffic",  
         "Optimized topology",
         "Game ready export",
       ],
@@ -106,7 +109,7 @@ export default function Projects() {
       year: "1999",
       image: "/assets/images/Main/GTi2000_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model. Made from reference pictures and blueprints. 26.3k tris. Also features alternative Specs: Gol SPECIAL",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -120,7 +123,7 @@ export default function Projects() {
       year: "1993",
       image: "/assets/images/Main/GOLGTi_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model. Made from reference pictures and blueprints. 51.7k tris due to the shape of the wheels, being BBS's they require a lot of tris.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -134,7 +137,7 @@ export default function Projects() {
       year: "1989",
       image: "/assets/images/Main/XR2i_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model made from reference pictures and blueprints. 30.8K Tris.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -148,7 +151,7 @@ export default function Projects() {
       year: "1985",
       image: "/assets/images/Main/MarchWS_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Low-poly traffic model. This model was a derivate of my main BeamNG.Drive K10 March Mod, hence why the amount of different March Specs. 42.1k Tris.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -162,7 +165,7 @@ export default function Projects() {
       year: "1986",
       image: "/assets/images/Main/Starlet_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "The first bespoke Traffic model I made, initially when there wasn't any vanilla traffic yet so it died due to the difficulty of making an entire jbeam from scratch. 25.8k Tris.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -176,7 +179,7 @@ export default function Projects() {
       year: "2016",
       image: "/assets/images/Main/Canbus_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Initially made within a weekend to teach a friend (agent) how to model, It ended up being part of a prototype Traffic mod, and later fully instated in Agent's Simplified Traffic Pack. 23.3k Tris",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -190,7 +193,7 @@ export default function Projects() {
       year: "1989-1992",
       image: "/assets/images/Main/SUPERTURBO_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Original model from the March pack, simplified to be used for Traffic purposes. 40k Tris.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -204,7 +207,7 @@ export default function Projects() {
       year: "1985",
       image: "/assets/images/Main/MarchTURBO_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "Second Original model from the March pack, simplified to be used for Traffic purposes. 50.5k Tris.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
@@ -218,7 +221,7 @@ export default function Projects() {
       year: "1985",
       image: "/assets/images/Main/FJ20_main.png",
       tags: ["3D Modeling", "Blender"],
-      description: "Low-poly traffic model.",
+      description: "My first 3D Engine model ever, back from when I still didn't know how to texture in Substance Painter. Due to a revamp soon.",
       highlights: [
         "Custom shading workflow",
         "Optimized topology",
