@@ -147,6 +147,7 @@ export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 3vw, 2rem);
+  align-self: center;
 `;
 
 export const Paragraph = styled.p`

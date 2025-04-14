@@ -114,21 +114,9 @@ export const ProjectCard = styled.article`
   max-width: 300px;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    border-color: ${colors.accent}20;
-
-    ${ProjectTitle} {
-      color: ${colors.accent};
-    }
-
-    ${ProjectImage} img {
-      transform: scale(1.03);
-    }
-
-    ${Tag} {
-      background: ${colors.accent}15;
-      border-color: ${colors.accent}30;
+    transform: translateY(-8px) scale(1.02);
+    img {
+      transform: scale(1.05);
     }
   }
 `;

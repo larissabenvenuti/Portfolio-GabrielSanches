@@ -3,17 +3,16 @@ import styled from "styled-components";
 import { colors } from "@/contexts/theme";
 
 export const PageContainer = styled.div`
-  background-color: ${props => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.background};
   min-height: 100vh;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
 `;
 
 export const GallerySection = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem clamp(1rem, 3vw, 3rem);
-  background-color: transparent;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
 `;
 
 export const TitleGallery = styled.h1`
@@ -22,11 +21,12 @@ export const TitleGallery = styled.h1`
   margin-bottom: clamp(1.5rem, 4vw, 2rem);
   color: ${colors.accent};
   font-weight: 500;
-  
+
   &:before {
-    content: '/ ';
+    content: "/ ";
+    color: ${(props) => props.theme.colors.textMuted};
   }
-  
+
   @media (max-width: 480px) {
     font-size: 1.5rem;
   }
@@ -37,19 +37,19 @@ export const PhotoGrid = styled.div`
   grid-template-columns: repeat(1, 1fr);
   gap: clamp(0.75rem, 2vw, 1rem);
   margin-top: clamp(2rem, 5vw, 3rem);
-  
+
   @media (min-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   @media (min-width: 992px) {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   @media (min-width: 1200px) {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -60,27 +60,28 @@ export const PhotoItem = styled.div`
   cursor: pointer;
   border-radius: 4px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   aspect-ratio: 1/1;
   border: 1px solid ${colors.border};
+  box-shadow: 0 2px 4px ${colors.shadow};
   box-sizing: border-box;
-  
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  
+
   &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px ${props => props.theme.colors.glowLight};
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
     
     img {
       transform: scale(1.05);
     }
   }
-  
+
   @media (max-width: 480px) {
     border-radius: 8px;
   }
@@ -97,12 +98,13 @@ export const LoadMoreButton = styled.button`
   font-size: clamp(0.9rem, 2vw, 1rem);
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
-    background-color: ${props => props.theme.colors.glowLight};
-    box-shadow: 0 0 10px ${props => props.theme.colors.glowStrong};
+    background-color: ${(props) => props.theme.colors.glowLight};
+    box-shadow: 0 0 10px ${(props) => props.theme.colors.glowStrong};
+    border-color: ${colors.borderHover};
   }
-  
+
   @media (max-width: 480px) {
     width: 90%;
   }
@@ -126,20 +128,18 @@ export const ModalContent = styled.div`
   max-width: 95vw;
   max-height: 95vh;
   border-radius: 8px;
-  border: 1px solid ${colors.border};
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  background-color: transparent;
-  
+
   img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
   }
-  
+
   @media (max-width: 768px) {
     max-width: 98vw;
     max-height: 98vh;
@@ -150,7 +150,7 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgba(0, 188, 212, 0.2);
+  background: ${colors.accent}20;
   color: ${colors.accent};
   border: 1px solid ${colors.border};
   width: clamp(30px, 5vw, 40px);
@@ -163,13 +163,85 @@ export const CloseButton = styled.button`
   justify-content: center;
   align-items: center;
   z-index: 1001;
-  
+  transition: all 0.3s ease;
+
   &:hover {
-    background: rgba(0, 188, 212, 0.3);
+    background: ${colors.accent}30;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px ${(props) => props.theme.colors.glowLight};
   }
-  
+
   @media (max-width: 480px) {
     top: 10px;
     right: 10px;
+  }
+`;
+
+export const ModalCaption = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  color: ${(props) => props.theme.colors.text};
+  background: linear-gradient(
+    to top, 
+    ${(props) => props.theme.colors.backgroundAlt} 0%, 
+    ${(props) => props.theme.colors.backgroundAlt}80 80%, 
+    transparent 100%
+  );
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+`;
+
+export const NavigationArrow = styled.button`
+  position: absolute;
+  top: 50%;
+  ${props => props.direction === 'left' ? 'left: 20px;' : 'right: 20px;'}
+  transform: translateY(-50%);
+  background: ${colors.accent}20;
+  color: ${colors.accent};
+  border: 1px solid ${colors.border};
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 480px) {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    ${props => props.direction === 'left' ? 'left: 10px;' : 'right: 10px;'}
   }
 `;
