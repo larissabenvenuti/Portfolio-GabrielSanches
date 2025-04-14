@@ -119,7 +119,6 @@ export const Photo = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 

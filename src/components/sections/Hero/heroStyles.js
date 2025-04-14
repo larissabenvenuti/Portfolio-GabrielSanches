@@ -49,7 +49,7 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   font-size: 1.75rem;
   color: ${colors.text};
-  text-shadow: 0 0 3px ${colors.glowLight};
+  text-shadow: 0 0 2px ${colors.glowLight};
   margin-bottom: 2rem;
   text-align: center;
 

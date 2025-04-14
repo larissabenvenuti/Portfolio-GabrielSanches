@@ -57,7 +57,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Photo = styled.div`
-  width: 220px;
+  width: 250px;
   aspect-ratio: 1;
   clip-path: polygon(
     25% 6.7%, 75% 6.7%,
