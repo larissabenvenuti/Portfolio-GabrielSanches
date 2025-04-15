@@ -50,7 +50,6 @@ export default function About() {
             src="/assets/images/Gallery/Traffic_Gallery.png"
             alt="Traffic Pack"
             fill
-            style={{ objectFit: "cover" }}
             quality={100}
             sizes="(max-width: 768px) 260px, (max-width: 992px) 280px, 320px"
             priority

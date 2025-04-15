@@ -1,9 +1,9 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { colors } from "@/contexts/theme";
 
 const typewriter = keyframes`
   from { width: 0 }
-  to { width: 100% }
+  to { width: 35% }
 `;
 
 const blink = keyframes`
@@ -12,41 +12,32 @@ const blink = keyframes`
 `;
 
 export const AboutSection = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 3rem);
+  max-width: min(1200px, 90%);
+  margin: 0 auto;
   background: ${colors.background};
   color: ${colors.text};
   text-align: center;
-  
-  @media (max-width: 768px) {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    padding: 3.5rem 1rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 2.5rem 1rem;
-  }
 `;
 
 export const TitleAbout = styled.h1`
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   text-align: center;
-  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 2rem;
   color: ${colors.accent};
   font-weight: 500;
-  
+
   &:before {
     content: '/ ';
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem; 
-    margin-bottom: 1.5rem; 
+    font-size: 1.6rem;
   }
 `;
 
@@ -55,32 +46,22 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  max-width: 900px;
   width: 100%;
-  
+
   @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: center;
-  }
-
-  @media (max-width: 480px) {
-    gap: 1.5rem; 
+    gap: 3rem;
   }
 `;
 
 export const Photo = styled.div`
   width: 250px;
   aspect-ratio: 1;
-  clip-path: polygon(
-    25% 6.7%, 75% 6.7%,
-    100% 50%,
-    75% 93.3%, 25% 93.3%,
-    0% 50%
-  );
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
   border: 3px solid ${colors.accent};
   overflow: hidden;
   flex-shrink: 0;
-  
+
   img {
     width: 100%;
     height: 100%;
@@ -88,38 +69,26 @@ export const Photo = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 200px; 
+    width: 300px;
   }
 
   @media (max-width: 480px) {
-    width: 150px; 
+    width: 200px;
   }
 `;
 
 export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
   max-width: 600px;
   text-align: justify;
-
-  @media (max-width: 768px) {
-    max-width: 90%; 
-  }
-
-  @media (max-width: 480px) {
-    max-width: 100%;
-  }
 `;
 
 export const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.6;
   color: ${colors.textMuted};
-
-  @media (max-width: 480px) {
-    font-size: 1rem; 
-  }
 `;
 
 export const TypewriterParagraph = styled(Paragraph)`
@@ -129,8 +98,11 @@ export const TypewriterParagraph = styled(Paragraph)`
   width: 0;
   animation: ${typewriter} 4s steps(40, end) forwards,
              ${blink} 1s step-end infinite;
-  
-  @media (max-width: 480px) {
-    font-size: 1rem; 
+
+  @media (max-width: 768px) {
+    white-space: normal;
+    width: 100%;
+    border-right: none;
+    animation: none;
   }
 `;

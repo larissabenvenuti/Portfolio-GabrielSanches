@@ -3,14 +3,14 @@ import { colors } from "@/contexts/theme";
 
 export const KevinSection = styled.section`
   padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 3rem);
-  max-width: min(1200px, 90%);
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   color: ${colors.text};
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 
   &::before {
     content: "";
@@ -34,11 +34,7 @@ export const KevinSection = styled.section`
     left: min(-3vw, -30px);
     width: min(200px, 40vw);
     height: min(200px, 40vw);
-    background: linear-gradient(
-      135deg,
-      transparent 0%,
-      ${colors.glowLight} 100%
-    );
+    background: linear-gradient(135deg, transparent 0%, ${colors.glowLight} 100%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     z-index: -1;
     opacity: 0.5;
@@ -55,18 +51,16 @@ export const KevinSection = styled.section`
   }
 
   @media (max-width: 768px) {
-    margin-top: 15px;
-    margin-bottom: 15px;
     &::before {
-      opacity: 0.5;
+      opacity: 0.4;
     }
     &::after {
-      opacity: 0.3;
+      opacity: 0.25;
     }
   }
 
   @media (max-width: 480px) {
-    padding: 2rem 1rem; 
+    padding: 2.5rem 1rem;
   }
 `;
 
@@ -76,14 +70,14 @@ export const TitleKevin = styled.h1`
   margin-bottom: clamp(1.5rem, 4vw, 2rem);
   color: ${colors.accent};
   font-weight: 500;
-  
+
   &:before {
     content: '/ ';
   }
-  
+
   @media (max-width: 480px) {
     font-size: 1.5rem;
-    margin-bottom: 1rem;  
+    margin-bottom: 1.2rem;
   }
 `;
 
@@ -96,12 +90,12 @@ export const ContentWrapper = styled.div`
 
   @media (max-width: 992px) {
     grid-template-columns: minmax(180px, 240px) 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
     text-align: center;
   }
 
@@ -131,7 +125,7 @@ export const Photo = styled.div`
   &:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-    
+
     img {
       transform: scale(1.05);
     }
@@ -140,13 +134,10 @@ export const Photo = styled.div`
   @media (max-width: 768px) {
     max-width: 320px;
     margin: 0 auto;
-    object-fit: contain;
   }
 
   @media (max-width: 480px) {
     max-width: 260px;
-    aspect-ratio: 3/4;
-    object-fit: contain;
   }
 `;
 
@@ -157,7 +148,7 @@ export const TextContent = styled.div`
   align-self: center;
 
   @media (max-width: 768px) {
-    text-align: center; 
+    text-align: center;
   }
 `;
 
@@ -177,11 +168,7 @@ export const Paragraph = styled.p`
     top: 0.5em;
     height: 60%;
     width: 4px;
-    background: linear-gradient(
-      to bottom,
-      ${colors.accentGradientStart},
-      ${colors.accentGradientEnd}
-    );
+    background: linear-gradient(to bottom, ${colors.accentGradientStart}, ${colors.accentGradientEnd});
     border-radius: 3px;
     transition: height 0.3s ease;
   }
@@ -192,7 +179,7 @@ export const Paragraph = styled.p`
 
   @media (max-width: 992px) {
     line-height: 1.7;
-    padding-left: 1.75rem;
+    padding-left: 1.5rem;
   }
 
   @media (max-width: 768px) {
@@ -204,11 +191,11 @@ export const Paragraph = styled.p`
       display: none;
     }
 
-    text-align: center; 
+    text-align: center;
   }
 
   @media (max-width: 480px) {
-    text-align: left;
     font-size: 1rem;
+    text-align: justify;
   }
 `;

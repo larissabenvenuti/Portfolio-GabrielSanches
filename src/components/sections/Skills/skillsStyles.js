@@ -39,29 +39,30 @@ export const SkillsSection = styled.section`
 
   @media (max-width: 768px) {
     padding: 4rem 1.5rem;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 480px) {
     padding: 3rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 `;
 
 export const TitleSkills = styled.h1`
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   text-align: center;
-  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 2rem;
   color: ${colors.accent};
   font-weight: 500;
-  
+
   &:before {
     content: '/ ';
   }
 
   @media (max-width: 480px) {
-    font-size: 1.6rem; 
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -70,16 +71,15 @@ export const SkillGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 `;
 
@@ -101,12 +101,12 @@ export const SkillItem = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0.9rem 1.2rem;
-    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
   }
 
   @media (max-width: 480px) {
-    padding: 0.7rem 1rem;
+    padding: 0.7rem 0.9rem;
     font-size: 0.9rem;
   }
 `;
