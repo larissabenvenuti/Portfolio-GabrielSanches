@@ -135,11 +135,13 @@ export const Photo = styled.div`
   @media (max-width: 768px) {
     max-width: 320px;
     margin: 0 auto;
+    object-fit: contain;
   }
 
   @media (max-width: 480px) {
     max-width: 260px;
     aspect-ratio: 3/4;
+    object-fit: contain;
   }
 `;
 

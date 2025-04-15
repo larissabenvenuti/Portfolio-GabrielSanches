@@ -22,7 +22,7 @@ export const AboutSection = styled.section`
   color: ${colors.text};
   text-align: center;
   @media (max-width: 768px) {
-    margin-top: 15px;
+    margin-top: 30px;
     margin-bottom: 15px;
     padding: 3.5rem 1rem;
   }
