@@ -21,10 +21,15 @@ export const AboutSection = styled.section`
   background: ${colors.background};
   color: ${colors.text};
   text-align: center;
+  
   @media (max-width: 768px) {
     margin-top: 30px;
     margin-bottom: 15px;
     padding: 3.5rem 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2.5rem 1rem;
   }
 `;
 
@@ -38,12 +43,12 @@ export const TitleAbout = styled.h1`
   &:before {
     content: '/ ';
   }
-  
+
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem; 
   }
 `;
-
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -52,9 +57,14 @@ export const ContentWrapper = styled.div`
   align-items: center;
   max-width: 900px;
   width: 100%;
-
+  
   @media (min-width: 768px) {
     flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem; 
   }
 `;
 
@@ -70,10 +80,19 @@ export const Photo = styled.div`
   border: 3px solid ${colors.accent};
   overflow: hidden;
   flex-shrink: 0;
+  
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    width: 200px; 
+  }
+
+  @media (max-width: 480px) {
+    width: 150px; 
   }
 `;
 
@@ -84,12 +103,23 @@ export const TextContent = styled.div`
   max-width: 600px;
   text-align: justify;
 
+  @media (max-width: 768px) {
+    max-width: 90%; 
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
 `;
 
 export const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.6;
   color: ${colors.textMuted};
+
+  @media (max-width: 480px) {
+    font-size: 1rem; 
+  }
 `;
 
 export const TypewriterParagraph = styled(Paragraph)`
@@ -99,4 +129,8 @@ export const TypewriterParagraph = styled(Paragraph)`
   width: 0;
   animation: ${typewriter} 4s steps(40, end) forwards,
              ${blink} 1s step-end infinite;
+  
+  @media (max-width: 480px) {
+    font-size: 1rem; 
+  }
 `;

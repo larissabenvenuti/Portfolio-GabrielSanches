@@ -1,6 +1,6 @@
-"use client"; 
+'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   HeaderSection,
   Link,
@@ -15,6 +15,10 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.visibility = "visible";
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

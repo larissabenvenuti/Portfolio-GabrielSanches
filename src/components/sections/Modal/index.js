@@ -1,5 +1,3 @@
-"use client"; 
-
 import {
   Overlay,
   ModalContainer,
@@ -114,7 +112,6 @@ export default function Modal({ project, onClose, onNext, onPrev }) {
           </ProjectHighlights>
 
           <ProjectDownloads>
-            <span>Available on:</span>
             <div>
               <DownloadLink href={project.download}></DownloadLink>
               <DownloadLink href={project.download}></DownloadLink>

@@ -58,9 +58,10 @@ export const TitleSkills = styled.h1`
   &:before {
     content: '/ ';
   }
-  
+
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1.6rem; 
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -73,11 +74,12 @@ export const SkillGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 1rem;
   }
 `;
 
@@ -99,12 +101,12 @@ export const SkillItem = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0.8rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
   }
 
   @media (max-width: 480px) {
-    padding: 0.7rem 0.9rem;
+    padding: 0.7rem 1rem;
     font-size: 0.9rem;
   }
 `;

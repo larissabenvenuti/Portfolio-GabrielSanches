@@ -2,7 +2,6 @@
 
 import { useState, useMemo, lazy, Suspense } from "react";
 import Image from "next/image";
-import Modal from "@/components/sections/Modal";
 import {
   ProjectsContainer,
   TitleProjects,

@@ -1,5 +1,4 @@
-"use client";
-import { createGlobalStyle, styled } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -26,15 +25,10 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-`;
 
-export const Container = styled.div`
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
-  min-height: 100vh;
-  padding: 4rem 2rem;
-
-  @media (max-width: 768px) {
-    padding: 3rem 1rem;
+  body {
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 `;

@@ -1,27 +1,13 @@
 const nextConfig = {
+  reactStrictMode: true,
   compiler: {
-    styledComponents: true,
+    styledComponents: true, 
   },
   images: {
-    domains: [],
-  },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|svg)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next',
-            name: 'static/media/[name].[hash].[ext]',
-          },
-        },
-      ],
-    });
-    return config;
+    domains: [], 
   },
   experimental: {
-    esmExternals: true, 
+    esmExternals: true,
   },
 };
 

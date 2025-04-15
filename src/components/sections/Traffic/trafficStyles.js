@@ -66,7 +66,7 @@ export const TrafficSection = styled.section`
   }
 
   @media (max-width: 480px) {
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem; 
   }
 `;
 
@@ -83,6 +83,7 @@ export const TitleTraffic = styled.h1`
   
   @media (max-width: 480px) {
     font-size: 1.5rem;
+    margin-bottom: 1rem;  
   }
 `;
 
@@ -102,6 +103,10 @@ export const ContentWrapper = styled.div`
     grid-template-columns: 1fr;
     gap: 2.5rem;
     text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
   }
 `;
 
@@ -135,11 +140,13 @@ export const Photo = styled.div`
   @media (max-width: 768px) {
     max-width: 320px;
     margin: 0 auto;
+    object-fit: contain;
   }
 
   @media (max-width: 480px) {
     max-width: 260px;
     aspect-ratio: 3/4;
+    object-fit: contain;
   }
 `;
 
@@ -148,6 +155,10 @@ export const TextContent = styled.div`
   flex-direction: column;
   gap: clamp(1.5rem, 3vw, 2rem);
   align-self: center;
+
+  @media (max-width: 768px) {
+    text-align: center; 
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -192,6 +203,8 @@ export const Paragraph = styled.p`
     &::before {
       display: none;
     }
+
+    text-align: center; 
   }
 
   @media (max-width: 480px) {
