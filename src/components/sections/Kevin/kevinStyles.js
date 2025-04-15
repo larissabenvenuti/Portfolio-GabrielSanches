@@ -119,6 +119,7 @@ export const Photo = styled.div`
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -156,7 +157,7 @@ export const Paragraph = styled.p`
   margin: 0;
   position: relative;
   padding-left: 2rem;
-  text-align: left;
+  text-align: justify;
 
   &::before {
     content: "";
@@ -187,7 +188,6 @@ export const Paragraph = styled.p`
     font-size: 1.05rem;
     line-height: 1.65;
     padding-left: 0;
-    text-align: center;
 
     &::before {
       display: none;

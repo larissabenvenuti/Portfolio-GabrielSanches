@@ -24,6 +24,7 @@ export const AboutSection = styled.section`
   @media (max-width: 768px) {
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 3.5rem 1rem;
   }
 `;
 
@@ -54,7 +55,6 @@ export const ContentWrapper = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    text-align: left;
   }
 `;
 
@@ -82,6 +82,8 @@ export const TextContent = styled.div`
   flex-direction: column;
   gap: 1.2rem;
   max-width: 600px;
+  text-align: justify;
+
 `;
 
 export const Paragraph = styled.p`
