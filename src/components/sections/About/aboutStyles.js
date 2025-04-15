@@ -21,6 +21,10 @@ export const AboutSection = styled.section`
   background: ${colors.background};
   color: ${colors.text};
   text-align: center;
+  @media (max-width: 768px) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const TitleAbout = styled.h1`

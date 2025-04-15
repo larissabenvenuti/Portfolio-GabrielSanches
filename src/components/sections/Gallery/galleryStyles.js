@@ -12,6 +12,10 @@ export const GallerySection = styled.section`
   margin: 0 auto;
   padding: 2rem clamp(1rem, 3vw, 3rem);
   color: ${(props) => props.theme.colors.text};
+  @media (max-width: 768px) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const TitleGallery = styled.h1`

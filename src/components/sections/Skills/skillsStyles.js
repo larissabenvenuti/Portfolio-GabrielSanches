@@ -39,6 +39,8 @@ export const SkillsSection = styled.section`
 
   @media (max-width: 768px) {
     padding: 4rem 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   @media (max-width: 480px) {

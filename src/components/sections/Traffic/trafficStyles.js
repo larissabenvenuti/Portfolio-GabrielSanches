@@ -55,6 +55,8 @@ export const TrafficSection = styled.section`
   }
 
   @media (max-width: 768px) {
+    margin-top: 15px;
+    margin-bottom: 15px;
     &::before {
       opacity: 0.5;
     }
