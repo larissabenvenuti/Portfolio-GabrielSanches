@@ -36,12 +36,6 @@ export default function Header() {
             <Link href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
           </ListItem>
           <ListItem>
-            <Link href="#kevin" onClick={() => setIsMenuOpen(false)}>Kevin</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="#traffic" onClick={() => setIsMenuOpen(false)}>Traffic</Link>
-          </ListItem>
-          <ListItem>
             <Link href="#about" onClick={() => setIsMenuOpen(false)}>About</Link>
           </ListItem>
           <ListItem>
