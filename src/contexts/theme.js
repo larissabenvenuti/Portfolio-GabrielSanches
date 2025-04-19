@@ -1,9 +1,9 @@
 export const colors = {
-  accent: "#00bcd4",
-  accentGradientStart: "#00acc1",
-  accentGradientEnd: "#00bcd4",
-  border: "#00acc1",
-  borderHover: "rgba(0, 172, 193, 0.4)",
+  accent: "#2CC3C2",
+  accentGradientStart: "#81eae8",
+  accentGradientEnd: "#2CC3C2",
+  border: "#81eae8",
+  borderHover: "#26c6db",
   shadow: "rgba(0, 0, 0, 0.2)",
 };
 
@@ -16,8 +16,8 @@ export const darkTheme = {
     text: "#e0e0e0",
     textMuted: "#b0b0b0",
     textDimmed: "#8a8a8a",
-    glowLight: "rgba(0, 188, 212, 0.2)",
-    glowStrong: "rgba(0, 188, 212, 0.4)",
+    glowLight: "#c6f2f0",
+    glowStrong: "#26c6db",
   },
 };
 
@@ -30,7 +30,7 @@ export const lightTheme = {
     text: "#212121",
     textMuted: "#757575",
     textDimmed: "#9e9e9e",
-    glowLight: "rgba(0, 188, 212, 0.1)",
-    glowStrong: "rgba(0, 188, 212, 0.2)",
+    glowLight: "#c6f2f0",
+    glowStrong: "#26c6db",
   },
 };
