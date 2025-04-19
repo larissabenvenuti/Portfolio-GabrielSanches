@@ -20,7 +20,7 @@ export default function Hero() {
       </Bio>
       <ButtonGroup>
         <Button href="#about">
-          Let's get in touch!
+          Let&apos;s get in touch!
         </Button>
       </ButtonGroup>
     </HeroSection>

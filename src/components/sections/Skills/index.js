@@ -1,27 +1,42 @@
-"use client"; 
+"use client";
 
 import React from "react";
+import { FaHeadphones, FaDiceD6  } from "react-icons/fa";
+import { SiBlender, SiAdobe, SiRoblox } from "react-icons/si";
+import { GiEmptyChessboard, GiPerspectiveDiceThree } from "react-icons/gi";
+import { PiOven } from "react-icons/pi";
 import {
-  TitleSkills,
   SkillsSection,
-  SkillGrid,
-  SkillItem,
+  Title,
+  Grid,
+  Item,
+  IconWrapper,
+  Label,
 } from "@/components/sections/Skills/skillsStyles";
 
 export default function Skills() {
+  const skills = [
+    { label: "Blender", icon: <SiBlender /> },
+    { label: "Substance Painter", icon: <SiAdobe /> },
+    { label: "Roblox Studio", icon: <SiRoblox /> },
+    { label: "3D Modeling", icon: <FaDiceD6   /> },
+    { label: "Texturing", icon: <GiEmptyChessboard /> },
+    { label: "UV Mapping", icon: < GiPerspectiveDiceThree  /> },
+    { label: "Texture Baking", icon: <PiOven /> },
+    { label: "Audio", icon: <FaHeadphones /> },
+  ];
+
   return (
     <SkillsSection id="skills">
-      <TitleSkills>My Skills</TitleSkills>
-      <SkillGrid>
-        <SkillItem>Blender</SkillItem>
-        <SkillItem>Substance Painter</SkillItem>
-        <SkillItem>Roblox Studio</SkillItem>
-        <SkillItem>3D Modeling</SkillItem>
-        <SkillItem>Texturing</SkillItem>
-        <SkillItem>UV Mapping</SkillItem>
-        <SkillItem>Texture Baking</SkillItem>
-        <SkillItem>Audio</SkillItem>
-      </SkillGrid>
+      <Title>My Skills</Title>
+      <Grid>
+        {skills.map((skill, index) => (
+          <Item key={index}>
+            <IconWrapper>{skill.icon}</IconWrapper>
+            <Label>{skill.label}</Label>
+          </Item>
+        ))}
+      </Grid>
     </SkillsSection>
   );
 }

@@ -9,104 +9,105 @@ export const SkillsSection = styled.section`
   position: relative;
   color: ${colors.text};
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  &::before {
     top: -80px;
     left: -80px;
     width: 250px;
     height: 250px;
-    border-radius: 50%;
     border: 1px solid ${colors.border};
-    z-index: -1;
   }
 
   &::after {
-    content: "";
-    position: absolute;
     bottom: -40px;
     right: -40px;
     width: 150px;
     height: 150px;
-    background: linear-gradient(
-      135deg,
-      transparent 0%,
-      ${colors.glowLight} 100%
-    );
+    background: linear-gradient(135deg, transparent 0%, ${colors.glowLight} 100%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    z-index: -1;
   }
 
   @media (max-width: 768px) {
     padding: 4rem 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 
   @media (max-width: 480px) {
     padding: 3rem 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 `;
 
-export const TitleSkills = styled.h1`
+export const Title = styled.h1`
   font-size: clamp(2rem, 5vw, 2.5rem);
-  text-align: center;
-  margin-bottom: 2rem;
   color: ${colors.accent};
-  font-weight: 500;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 600;
 
-  &:before {
-    content: '/ ';
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.6rem;
+  &::before {
+    content: "/ ";
+    color: ${colors.border};
   }
 `;
 
-export const SkillGrid = styled.div`
+export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
   max-width: 900px;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1rem;
   }
 `;
 
-export const SkillItem = styled.div`
-  background: rgba(255, 255, 255, 0.04);
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  color: ${colors.accent};
+export const Item = styled.div`
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid ${colors.border};
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease;
+  cursor: default;
 
   &:hover {
     background: rgba(0, 255, 255, 0.05);
     color: ${colors.text};
-    transform: scale(1.05);
-    box-shadow: 0 0 10px ${colors.glowLight};
+    box-shadow: 0 0 12px ${colors.glowLight};
+    transform: translateY(-4px);
   }
 
   @media (max-width: 768px) {
-    padding: 0.8rem 1rem;
-    font-size: 0.95rem;
+    padding: 1rem;
   }
+`;
+
+export const IconWrapper = styled.div`
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: ${colors.accent};
+`;
+
+export const Label = styled.span`
+  font-weight: 500;
+  font-size: 1rem;
+  color: ${colors.accent};
 
   @media (max-width: 480px) {
-    padding: 0.7rem 0.9rem;
     font-size: 0.9rem;
   }
 `;
