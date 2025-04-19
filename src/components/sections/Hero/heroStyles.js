@@ -1,5 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { colors } from "@/contexts/theme";
+
+const textLength = 18;
+const typewriter = keyframes`
+  from { width: 0 }
+  to { width: ${textLength}ch }
+`;
+
+const blink = keyframes`
+  0%, 100% { border-color: transparent }
+  50% { border-color: ${colors.accent} }
+`;
 
 export const HeroSection = styled.div`
   color: ${colors.text};
@@ -7,7 +18,7 @@ export const HeroSection = styled.div`
   padding: 4.5rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   font-family: "Orbitron", sans-serif;
   background: ${colors.background};
@@ -24,7 +35,22 @@ export const HeroSection = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 4rem;
+  font-size: 2.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 0.5rem;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+`;
+
+export const TypewriterTitle = styled.h1`
+  font-size: 2.5rem;
   background: linear-gradient(
     90deg,
     ${colors.accentGradientStart},
@@ -33,55 +59,60 @@ export const Title = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
-  text-align: center;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid ${colors.accent};
+  width: 0;
+  animation: ${typewriter} 4s steps(40, end) forwards,
+             ${blink} 1s step-end infinite;
 
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
-
+  
   @media (max-width: 480px) {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
   }
 `;
 
-export const Subtitle = styled.h2`
-  font-size: 1.75rem;
-  color: ${colors.text};
-  text-shadow: 0 0 2px ${colors.glowLight};
-  margin-bottom: 2rem;
-  text-align: center;
+export const TitleTwo = styled.h1`
+  font-size: 2.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 0.5rem;
+  text-align: left;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 `;
 
 export const Bio = styled.p`
-  line-height: 1.8;
-  max-width: 700px;
+  line-height: 1.5;
+  max-width: 850px;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: left;
   color: ${colors.textMuted};
-  font-size: 1rem;
+  font-size: 1.25rem;
 
   @media (max-width: 768px) {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 2rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
 
   @media (max-width: 480px) {

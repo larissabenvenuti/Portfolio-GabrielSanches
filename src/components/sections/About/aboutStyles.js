@@ -1,15 +1,5 @@
-import styled, { keyframes, css } from "styled-components";
 import { colors } from "@/contexts/theme";
-
-const typewriter = keyframes`
-  from { width: 0 }
-  to { width: 35% }
-`;
-
-const blink = keyframes`
-  0%, 100% { border-color: transparent }
-  50% { border-color: ${colors.accent} }
-`;
+import styled from "styled-components";
 
 export const AboutSection = styled.section`
   min-height: 100vh;
@@ -91,18 +81,44 @@ export const Paragraph = styled.p`
   color: ${colors.textMuted};
 `;
 
-export const TypewriterParagraph = styled(Paragraph)`
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid ${colors.accent};
-  width: 0;
-  animation: ${typewriter} 4s steps(40, end) forwards,
-             ${blink} 1s step-end infinite;
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  @media (max-width: 768px) {
-    white-space: normal;
+  @media (max-width: 480px) {
+    gap: 1rem;
     width: 100%;
-    border-right: none;
-    animation: none;
+  }
+`;
+
+export const Button = styled.a`
+  width: 100%;
+  background: ${colors.background};
+  border: 1px solid ${colors.accent};
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  color: ${colors.accent};
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &:focus,
+  &:hover {
+    transform: scale(1.03);
+    background: ${colors.accent};
+    color: #fff;
+  }
+
+  &:focus {
+    outline: 3px solid ${colors.accent};
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.6rem 1.5rem;
+    width: 100%;
   }
 `;

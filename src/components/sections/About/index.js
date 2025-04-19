@@ -8,7 +8,8 @@ import {
   Photo,
   TextContent,
   Paragraph,
-  TypewriterParagraph,
+  ButtonGroup,
+  Button,
 } from "@/components/sections/About/aboutStyles";
 
 export default function About() {
@@ -28,9 +29,9 @@ export default function About() {
         </Photo>
 
         <TextContent>
-          <TypewriterParagraph>
+          <Paragraph>
             Hey! I&apos;m Gabriel Sanches.
-          </TypewriterParagraph>
+          </Paragraph>
 
           <Paragraph>
             I&apos;m a 3D Artist and Game Developer with strong experience in
@@ -43,6 +44,19 @@ export default function About() {
             new techniques to achieve better quality models.
           </Paragraph>
         </TextContent>
+
+              <ButtonGroup>
+                <Button href="https://github.com/EzoWasTaken" target="_blank">
+                  GitHub
+                </Button>
+                <Button href="https://www.artstation.com/ezosama" target="_blank">
+                  ArtStation
+                </Button>
+                <Button href="https://sketchfab.com/EzoYEAHH" target="_blank">
+                SketchFab
+                </Button>
+              </ButtonGroup>
+
       </ContentWrapper>
     </AboutSection>
   );

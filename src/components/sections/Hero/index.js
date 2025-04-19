@@ -5,28 +5,22 @@ import {
   Button,
   ButtonGroup,
   HeroSection,
-  Subtitle,
   Title,
+  TitleTwo,
+  TypewriterTitle,
 } from "@/components/sections/Hero/heroStyles";
 
 export default function Hero() {
   return (
     <HeroSection>
-      <Title>Gabriel Sanches</Title>
-      <Subtitle>3D Vehicle Artist</Subtitle>
+      <Title>Hello, <br/></Title><TypewriterTitle>I&apos;m Gabriel Sanches,<br/></TypewriterTitle><TitleTwo> 3D Vehicle Artist</TitleTwo>
       <Bio>
         Specialized in low and midpoly vehicle models, as well as Texture
-        Baking, Substance Painter texturing and PBR assets.
+        Baking, <br/>Substance Painter texturing and PBR assets.
       </Bio>
       <ButtonGroup>
-        <Button href="https://github.com/EzoWasTaken" target="_blank">
-          GitHub
-        </Button>
-        <Button href="https://www.artstation.com/ezosama" target="_blank">
-          ArtStation
-        </Button>
-        <Button href="https://sketchfab.com/EzoYEAHH" target="_blank">
-        SketchFab
+        <Button href="#about">
+          Let's get in touch!
         </Button>
       </ButtonGroup>
     </HeroSection>
