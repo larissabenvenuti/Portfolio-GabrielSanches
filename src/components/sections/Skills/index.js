@@ -7,7 +7,7 @@ import { GiEmptyChessboard, GiPerspectiveDiceThree } from "react-icons/gi";
 import { PiOven } from "react-icons/pi";
 import {
   SkillsSection,
-  Title,
+  TitleSkills,
   Grid,
   Item,
   IconWrapper,
@@ -28,7 +28,7 @@ export default function Skills() {
 
   return (
     <SkillsSection id="skills">
-      <Title>My Skills</Title>
+      <TitleSkills>My Skills</TitleSkills>
       <Grid>
         {skills.map((skill, index) => (
           <Item key={index}>

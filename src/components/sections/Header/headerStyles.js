@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { colors } from "@/contexts/theme";
 
 export const HeaderSection = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  background-color: ${({ theme }) => theme.colors.background};
   padding: 0.8rem 2rem;
   box-shadow: 0 2px 8px ${({ theme }) => theme.colors.shadow};
   z-index: 1000;
@@ -19,6 +20,7 @@ export const HeaderSection = styled.header`
   }
 `;
 
+
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
@@ -29,7 +31,7 @@ export const Nav = styled.nav`
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.backgroundAlt};
+    background-color: ${colors.backgroundAlt};
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem 1.5rem;
@@ -61,12 +63,12 @@ export const ListItem = styled.li`
 
   @media (max-width: 768px) {
     width: 100%;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+    border-bottom: 1px solid ${colors.border};
   }
 `;
 
 export const Link = styled.a`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text}; 
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -77,8 +79,8 @@ export const Link = styled.a`
   display: block;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.glowLight};
-    color: ${({ theme }) => theme.colors.accent};
+    background-color: ${colors.glowLight}; 
+    color: ${colors.accent};
   }
 
   @media (max-width: 768px) {
@@ -99,7 +101,7 @@ export const HamburgerButton = styled.button`
   display: none;
   background: none;
   border: none;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text}; 
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;

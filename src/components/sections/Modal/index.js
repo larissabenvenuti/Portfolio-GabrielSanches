@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import {
   Overlay,
   ModalContainer,
@@ -23,9 +24,17 @@ import Image from "next/image";
 
 export default function Modal({ project, onClose, onNext, onPrev }) {
   const sketchfabUid = project?.sketchfabUid;
-  const sketchfabUrl = sketchfabUid 
-    ? `https://sketchfab.com/models/${sketchfabUid}/embed` 
+  const sketchfabUrl = sketchfabUid
+    ? `https://sketchfab.com/models/${sketchfabUid}/embed`
     : null;
+
+  const handlePrevClick = useCallback(() => {
+    if (onPrev) onPrev();
+  }, [onPrev]);
+
+  const handleNextClick = useCallback(() => {
+    if (onNext) onNext();
+  }, [onNext]);
 
   return (
     <Overlay onClick={onClose}>
@@ -111,15 +120,16 @@ export default function Modal({ project, onClose, onNext, onPrev }) {
             ))}
           </ProjectHighlights>
 
-          <ProjectDownloads>
-            <div>
-              <DownloadLink href={project.download}></DownloadLink>
-              <DownloadLink href={project.download}></DownloadLink>
-            </div>
-          </ProjectDownloads>
+          {project.download && (
+            <ProjectDownloads>
+              <DownloadLink href={project.download} target="_blank" rel="noopener noreferrer">
+                Download
+              </DownloadLink>
+            </ProjectDownloads>
+          )}
 
           <NavigationButtons>
-            <NavButton onClick={onPrev}>
+            <NavButton onClick={handlePrevClick}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M15 18L9 12L15 6"
@@ -131,7 +141,7 @@ export default function Modal({ project, onClose, onNext, onPrev }) {
               </svg>
               Previous
             </NavButton>
-            <NavButton onClick={onNext}>
+            <NavButton onClick={handleNextClick}>
               Next
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path

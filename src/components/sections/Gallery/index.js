@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
-  PageContainer,
+  GalleryContainer,
   GallerySection,
   TitleGallery,
   PhotoGrid,
@@ -298,13 +298,13 @@ const photoData = [
   },
 ];
 export default function PhotoGallery() {
-  const [visibleCount, setVisibleCount] = useState(10);
+  const [visibleCount, setVisibleCount] = useState(12);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeSkill, setActiveSkill] = useState(null);
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => Math.min(prev + 10, photoData.length));
+    setVisibleCount((prev) => Math.min(prev + 12, photoData.length));
   };
 
   const openModal = (photo) => {
@@ -361,7 +361,7 @@ export default function PhotoGallery() {
   const canLoadMore = visibleCount < filteredPhotos.length;
 
   return (
-    <PageContainer id="gallery">
+    <GalleryContainer id="gallery">
       <GallerySection>
         <TitleGallery>My Gallery</TitleGallery>
 
@@ -443,6 +443,6 @@ export default function PhotoGallery() {
           </ModalBackdrop>
         )}
       </GallerySection>
-    </PageContainer>
+    </GalleryContainer>
   );
 }

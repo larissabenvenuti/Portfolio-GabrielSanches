@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import Image from "next/image";
 import {
@@ -25,38 +25,71 @@ export default function About() {
             width={300}
             height={300}
             style={{ objectFit: "cover" }}
+            priority
           />
         </Photo>
 
         <TextContent>
           <Paragraph>
-            Hey! I&apos;m Gabriel Sanches.
+            Hey! I&apos;m Gabriel Sanches, a passionate 3D Artist and Game
+            Developer specializing in vehicle modeling.
           </Paragraph>
 
           <Paragraph>
-            I&apos;m a 3D Artist and Game Developer with strong experience in
-            Blender and Substance Painter. My main focus is realistic vehicle
-            modeling for games and simulations. I love pushing polygon limits
-            and optimizing assets for real-time rendering. Whether it&apos;s
-            creating detailed models for Baking or low-poly models for game use,
-            I&apos;m always experimenting with new techniques. When I&apos;m not
-            working on 3D cars, you can find me working on my car and learning
-            new techniques to achieve better quality models.
+            With 5+ years mastering Blender and Substance Painter, I specialize
+            in creating premium vehicle models for AAA games and simulations. My
+            work balances stunning visual detail with real-time performance,
+            expertly navigating high-to-low poly baking workflows while
+            innovating PBR material creation. When not perfecting digital
+            automotive models, I apply this same technical precision to hands-on
+            car restoration and modification - bringing authentic mechanical
+            insight to every 3D asset I craft.
           </Paragraph>
         </TextContent>
 
-              <ButtonGroup>
-                <Button href="https://github.com/EzoWasTaken" target="_blank">
-                  GitHub
-                </Button>
-                <Button href="https://www.artstation.com/ezosama" target="_blank">
-                  ArtStation
-                </Button>
-                <Button href="https://sketchfab.com/EzoYEAHH" target="_blank">
-                SketchFab
-                </Button>
-              </ButtonGroup>
+        <ButtonGroup>
+          <Button
+            href="https://github.com/EzoWasTaken"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </Button>
+          <Button
+            href="https://www.artstation.com/ezosama"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ArtStation
+          </Button>
+          <Button
+            href="https://sketchfab.com/EzoYEAHH"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SketchFab
+          </Button>
+          <Button
+            href="mailto:ezoyeahh@gmail.com?subject=Let's get in touch!&body=Hello Gabriel, I'd like to talk about..."
+            onClick={(e) => {
+              e.preventDefault();
+              window.open(
+                "mailto:ezoyeahh@gmail.com?subject=Let's get in touch!&body=Hello Gabriel, I'd like to talk about...",
+                "_blank"
+              );
+            }}
+          >
+            Email
+          </Button>
 
+          <Button
+            href="https://discord.com/users/ezooooo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Discord
+          </Button>
+        </ButtonGroup>
       </ContentWrapper>
     </AboutSection>
   );

@@ -36,7 +36,7 @@ export const HeroSection = styled.div`
 
 export const Title = styled.h1`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text}; 
   margin-bottom: 0.5rem;
   text-align: left;
 
@@ -78,7 +78,7 @@ export const TypewriterTitle = styled.h1`
 
 export const TitleTwo = styled.h1`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text}; 
   margin-bottom: 0.5rem;
   text-align: left;
 
@@ -122,30 +122,26 @@ export const ButtonGroup = styled.div`
 `;
 
 export const Button = styled.a`
-  background: ${colors.background};
-  border: 1px solid ${colors.accent};
-  padding: 0.75rem 2rem;
-  border-radius: 12px;
+  background: transparent;
+  border: 1px solid ${colors.border};
+  padding: 1.5rem 1.5rem;
+  border-radius: 6px;
   color: ${colors.accent};
-  text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
   text-align: center;
+  min-width: 120px;
 
-  &:focus,
   &:hover {
-    transform: scale(1.03);
-    background: ${colors.accent};
-    color: #fff;
-  }
-
-  &:focus {
-    outline: 3px solid ${colors.accent};
-    outline-offset: 4px;
+    background: rgba(44, 195, 194, 0.1);
+    border-color: ${colors.borderHover};
+    box-shadow: 3px 6px ${colors.accent};
+    transform: translateY(-2px);
   }
 
   @media (max-width: 480px) {
-    padding: 0.6rem 1.5rem;
     width: 100%;
+    padding: 0.5rem;
   }
 `;

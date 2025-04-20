@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { colors } from "@/contexts/theme";
 
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
   padding: 2rem;
+  overflow-y: auto;
   animation: fadeIn 0.3s ease;
 
   @keyframes fadeIn {
@@ -29,11 +30,13 @@ export const ModalContainer = styled.div`
   max-width: 1000px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text};
   position: relative;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  z-index: 10001;
   animation: scaleUp 0.3s ease;
+  margin-top: 10vh;
 
   @keyframes scaleUp {
     from {
@@ -65,7 +68,7 @@ export const CloseButton = styled.button`
   transition: all 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${colors.accent};
     transform: rotate(90deg);
   }
 `;
@@ -105,13 +108,13 @@ export const ProjectHeader = styled.div`
 export const ProjectTitle = styled.h2`
   font-size: 2rem;
   margin: 0;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text};
   font-weight: 700;
 `;
 
 export const ProjectYear = styled.span`
   font-size: 1rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: ${colors.textMuted};
   font-weight: 400;
 `;
 
@@ -122,16 +125,16 @@ export const ProjectTags = styled.div`
 `;
 
 export const Tag = styled.span`
-  background: ${({ theme }) => theme.colors.accent}20;
-  color: ${({ theme }) => theme.colors.accent};
+  background: ${colors.accent}20;
+  color: ${colors.accent};
   padding: 0.35rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
-  border: 1px solid ${({ theme }) => theme.colors.accent};
+  border: 1px solid ${colors.accent};
 `;
 
 export const ProjectDescription = styled.p`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text};
   line-height: 1.6;
   margin: 0;
 `;
@@ -148,13 +151,13 @@ export const HighlightItem = styled.li`
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text};
   list-style: none;
 
   svg {
     flex-shrink: 0;
     margin-top: 0.2rem;
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${colors.accent};
   }
 `;
 
@@ -166,7 +169,7 @@ export const ProjectDownloads = styled.div`
 
   span {
     font-size: 0.9rem;
-    color: ${({ theme }) => theme.colors.textMuted};
+    color: ${colors.textMuted};
   }
 
   div {
@@ -176,7 +179,7 @@ export const ProjectDownloads = styled.div`
 `;
 
 export const DownloadLink = styled.a`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${colors.text};
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -184,7 +187,7 @@ export const DownloadLink = styled.a`
   transition: all 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${colors.accent};
     transform: translateY(-2px);
   }
 `;
@@ -200,18 +203,18 @@ export const NavButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${colors.background};
+  color: ${colors.text};
+  border: 1px solid ${colors.border};
   border-radius: 8px;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.accent};
+    background: ${colors.accent};
     color: white;
-    border-color: ${({ theme }) => theme.colors.accent};
+    border-color: ${colors.accent};
   }
 `;
 

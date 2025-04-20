@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import {
@@ -7,46 +7,60 @@ import {
   List,
   ListItem,
   Nav,
+  HamburgerButton,
   HeaderActions,
-  HamburgerButton
 } from "@/components/sections/Header/headerStyles";
 import ThemeSwitcher from "@/components/ui/toggleButton";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-export default function Header() {
+export default function Header({ onNavigate }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    document.body.style.visibility = "visible";
+    setIsMounted(true);
   }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
+
+  const handleSmartScroll = (id) => {
+    setIsMenuOpen(false);
+    onNavigate(id);
+  };
+
+  const handleKeyPress = (e, id) => {
+    if (e.key === "Enter") {
+      handleSmartScroll(id);
+    }
+  };
+
+  if (!isMounted) return null;
 
   return (
     <HeaderSection>
       <HamburgerButton onClick={toggleMenu} aria-label="Menu">
         {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
       </HamburgerButton>
-      
+
       <Nav $isOpen={isMenuOpen}>
         <List>
-          <ListItem>
-            <Link href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="#about" onClick={() => setIsMenuOpen(false)}>About</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
-          </ListItem>
+          {["skills", "projects", "about", "gallery"].map((id) => (
+            <ListItem key={id}>
+              <Link
+                role="button"
+                tabIndex={0}
+                onClick={() => handleSmartScroll(id)}
+                onKeyDown={(e) => handleKeyPress(e, id)}
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </Link>
+            </ListItem>
+          ))}
         </List>
       </Nav>
-      
+
       <HeaderActions>
         <ThemeSwitcher />
       </HeaderActions>

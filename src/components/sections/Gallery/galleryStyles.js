@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import { colors } from "@/contexts/theme";
 
-export const PageContainer = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+export const GalleryContainer = styled.div`
+  background-color: ${colors.background};
   min-height: 100vh;
-  color: ${(props) => props.theme.colors.text};
+  color: ${colors.text};
 `;
 
 export const GallerySection = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem clamp(1rem, 3vw, 3rem);
-  color: ${(props) => props.theme.colors.text};
+  color: ${colors.text};
   @media (max-width: 768px) {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -19,18 +19,32 @@ export const GallerySection = styled.section`
 `;
 
 export const TitleGallery = styled.h1`
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   text-align: center;
-  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 2.5rem;
   color: ${colors.accent};
-  font-weight: 500;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
-  &:before {
-    content: "/ ";
+  &::before {
+    color: ${colors.border};
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, ${colors.accentGradientStart}, ${colors.accentGradientEnd});
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -102,8 +116,8 @@ export const LoadMoreButton = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.glowLight};
-    box-shadow: 0 0 10px ${(props) => props.theme.colors.glowStrong};
+    background-color: ${colors.glowLight};
+    box-shadow: 0 0 10px ${colors.glowStrong};
     border-color: ${colors.borderHover};
   }
 
@@ -170,7 +184,7 @@ export const CloseButton = styled.button`
   &:hover {
     background: ${colors.accent}30;
     transform: scale(1.1);
-    box-shadow: 0 0 10px ${(props) => props.theme.colors.glowLight};
+    box-shadow: 0 0 10px ${colors.glowLight};
   }
 
   @media (max-width: 480px) {
@@ -189,7 +203,7 @@ export const ModalCaption = styled.div`
   background: linear-gradient(
     to top, 
     #000, 
-#161616, 
+    #161616, 
     transparent 100%
   );
   text-align: center;
