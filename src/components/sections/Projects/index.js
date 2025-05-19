@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, lazy, Suspense } from "react";
+import { useState, useMemo, lazy } from "react";
 import Image from "next/image";
 import {
   ProjectsContainer,
@@ -14,7 +14,7 @@ import {
   LoadMoreButton,
 } from "@/components/sections/Projects/projectsStyles";
 
-const LazyModal = lazy(() => import("@/components/sections/Modal"));
+const Modal = lazy(() => import("@/components/sections/Modal"));
 
 const projectsList = [
   {
@@ -29,7 +29,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },
   {
     sketchfabUid: "ff644c2c4dbe41389d6542e729890e89",
@@ -43,7 +42,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },
   {
     sketchfabUid: "e0b3e758af03408da779023e383c1543",
@@ -58,7 +56,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },
   {
     sketchfabUid: "5e85d0f502ab45aaacac344603cec0ad",
@@ -73,7 +70,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },
   {
     sketchfabUid: "6787a688cb1a4e3c8ac7a10cc4548e15",
@@ -87,7 +83,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },
   {
     sketchfabUid: "1422c53f72f941f0a3ea7b6ad379afa5",
@@ -102,7 +97,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },    
   {
     sketchfabUid: "be772162e96746d0a4470e52dc7fbb1d",
@@ -116,7 +110,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },    
   {
     sketchfabUid: "6aa4b6e393614851aa5583053bcf6d4c",
@@ -130,7 +123,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },    
   {
     sketchfabUid: "c49a0c2a097c40dea655289c762953ef",
@@ -144,7 +136,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },       
   {
     sketchfabUid: "e77ecedbc9d146ab9f3f8d74ce0738c3",
@@ -158,7 +149,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },     
   {
     sketchfabUid: "3df666ced88e454ca5b94a5904054c55",
@@ -172,7 +162,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },     
   {
     sketchfabUid: "9aea5df0b9cf4c289b3931fa6a0b2412",
@@ -186,7 +175,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },           
   {
     sketchfabUid: "04bcf5079e5548a984aaee9499935903",
@@ -200,7 +188,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },      
   {
     sketchfabUid: "7db2db32fcff4d99a4e76f75ce7ca672",
@@ -214,7 +201,6 @@ const projectsList = [
       "Optimized topology",
       "Game ready export",
     ],
-    download: "#",
   },     
 ];
 
@@ -222,11 +208,9 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [visibleCount, setVisibleCount] = useState(8);
   const [isLoading, setIsLoading] = useState(false);
-
-  const visibleProjects = useMemo(
-    () => projectsList.slice(0, visibleCount),
-    [visibleCount]
-  );
+  const visibleProjects = useMemo(() => projectsList.slice(0, visibleCount), [
+    visibleCount,
+  ]);
 
   const canLoadMore = visibleCount < projectsList.length;
 
@@ -261,11 +245,10 @@ export default function Projects() {
   };
 
   const preloadImages = useMemo(() => {
-    if (currentIndex === null) return;
+    if (currentIndex === null) return null;
     const nextIndex = (currentIndex + 1) % projectsList.length;
-    const prevIndex =
-      currentIndex === 0 ? projectsList.length - 1 : currentIndex - 1;
-    
+    const prevIndex = currentIndex === 0 ? projectsList.length - 1 : currentIndex - 1;
+
     return (
       <>
         <link rel="preload" href={projectsList[nextIndex].image} as="image" />
@@ -282,7 +265,7 @@ export default function Projects() {
       <ProjectsGrid>
         {visibleProjects.map((project, index) => (
           <ProjectCard
-            key={project.sketchfabUid} 
+            key={project.sketchfabUid}
             onClick={() => setCurrentIndex(index)}
             data-aos="fade-up"
             data-aos-delay={(index % 8) * 100}
@@ -294,13 +277,12 @@ export default function Projects() {
                 width={400}
                 height={300}
                 loading={index > 3 ? "lazy" : "eager"}
-                priority={index < 2} 
-                quality={85} 
+                priority={index < 2}
+                quality={85}
               />
             </ProjectImage>
             <ProjectInfo>
               <ProjectTitle>{project.title}</ProjectTitle>
-              <p>{project.year}</p>
               <SeeMoreButton>
                 View Details
                 <svg
@@ -331,16 +313,14 @@ export default function Projects() {
       )}
 
       {currentIndex !== null && (
-        <Suspense fallback={null}>
-          <LazyModal
-            project={projectsList[currentIndex]}
-            onClose={() => setCurrentIndex(null)}
-            onNext={handleNext}
-            onPrev={handlePrev}
-            totalProjects={projectsList.length}
-            currentProjectIndex={currentIndex}
-          />
-        </Suspense>
+        <Modal
+          project={projectsList[currentIndex]}
+          onClose={() => setCurrentIndex(null)}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          totalProjects={projectsList.length}
+          currentProjectIndex={currentIndex}
+        />
       )}
     </ProjectsContainer>
   );

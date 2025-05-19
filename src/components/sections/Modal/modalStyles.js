@@ -4,13 +4,12 @@ import { colors } from "@/contexts/theme";
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  backdrop-filter: blur(8px);
   z-index: 1000;
   padding: 2rem;
-  overflow-y: auto;
   animation: fadeIn 0.3s ease;
 
   @keyframes fadeIn {
@@ -53,6 +52,7 @@ export const ModalContainer = styled.div`
     grid-template-columns: 1fr;
     max-height: 90vh;
     overflow-y: auto;
+    margin-top: 5vh;
   }
 `;
 

@@ -6,9 +6,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+      cz-shortcut-listen="true"
         <AppThemeProvider>
           <GlobalStyles />
           {children}
+          <div id="modal-root"></div>
         </AppThemeProvider>
       </body>
     </html>

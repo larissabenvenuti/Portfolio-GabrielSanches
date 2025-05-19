@@ -1,4 +1,5 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
+import ReactDOM from "react-dom";
 import {
   Overlay,
   ModalContainer,
@@ -12,8 +13,6 @@ import {
   ProjectDescription,
   ProjectHighlights,
   HighlightItem,
-  ProjectDownloads,
-  DownloadLink,
   NavigationButtons,
   NavButton,
   ViewerWrapper,
@@ -22,12 +21,29 @@ import {
 } from "./modalStyles";
 import Image from "next/image";
 
+function ModalPortal({ children, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  const modalRoot = document.getElementById("modal-root");
+  if (!modalRoot) return null;
+
+  return ReactDOM.createPortal(
+    <Overlay onClick={onClose}>{children}</Overlay>,
+    modalRoot
+  );
+}
+
 export default function Modal({ project, onClose, onNext, onPrev }) {
   const sketchfabUid = project?.sketchfabUid;
   const sketchfabUrl = sketchfabUid
     ? `https://sketchfab.com/models/${sketchfabUid}/embed`
     : null;
-
+    
   const handlePrevClick = useCallback(() => {
     if (onPrev) onPrev();
   }, [onPrev]);
@@ -37,9 +53,9 @@ export default function Modal({ project, onClose, onNext, onPrev }) {
   }, [onNext]);
 
   return (
-    <Overlay onClick={onClose}>
+    <ModalPortal onClose={onClose}>
       <ModalContainer onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>
+        <CloseButton as="button" type="button" onClick={onClose}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
               d="M18 6L6 18M6 6L18 18"
@@ -101,12 +117,7 @@ export default function Modal({ project, onClose, onNext, onPrev }) {
           <ProjectHighlights>
             {project.highlights.map((item, i) => (
               <HighlightItem key={i}>
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M5 13L9 17L19 7"
                     stroke="currentColor"
@@ -119,14 +130,6 @@ export default function Modal({ project, onClose, onNext, onPrev }) {
               </HighlightItem>
             ))}
           </ProjectHighlights>
-
-          {project.download && (
-            <ProjectDownloads>
-              <DownloadLink href={project.download} target="_blank" rel="noopener noreferrer">
-                Download
-              </DownloadLink>
-            </ProjectDownloads>
-          )}
 
           <NavigationButtons>
             <NavButton onClick={handlePrevClick}>
@@ -156,6 +159,6 @@ export default function Modal({ project, onClose, onNext, onPrev }) {
           </NavigationButtons>
         </ProjectContent>
       </ModalContainer>
-    </Overlay>
+    </ModalPortal>
   );
 }

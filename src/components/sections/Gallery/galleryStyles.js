@@ -1,6 +1,27 @@
 import styled from "styled-components";
 import { colors } from "@/contexts/theme";
 
+export const Overlay = styled.div`
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
 export const GalleryContainer = styled.div`
   background-color: ${colors.background};
   min-height: 100vh;
@@ -124,19 +145,6 @@ export const LoadMoreButton = styled.button`
   @media (max-width: 480px) {
     width: 90%;
   }
-`;
-
-export const ModalBackdrop = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
 `;
 
 export const ModalContent = styled.div`

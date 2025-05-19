@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import Image from "next/image";
 import {
+  Overlay,
   GalleryContainer,
   GallerySection,
   TitleGallery,
   PhotoGrid,
   PhotoItem,
   LoadMoreButton,
-  ModalBackdrop,
   ModalContent,
   CloseButton,
   ModalCaption,
@@ -297,11 +298,28 @@ const photoData = [
     caption: "Wireframe of the polyflow of the entire body.",
   },
 ];
+
+function ModalPortal({ children, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  const modalRoot = document.getElementById("modal-root");
+  if (!modalRoot) return null;
+
+  return ReactDOM.createPortal(
+    <Overlay onClick={onClose}>{children}</Overlay>,
+    modalRoot
+  );
+}
+
 export default function PhotoGallery() {
   const [visibleCount, setVisibleCount] = useState(12);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeSkill, setActiveSkill] = useState(null);
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => Math.min(prev + 12, photoData.length));
@@ -310,30 +328,28 @@ export default function PhotoGallery() {
   const openModal = (photo) => {
     setSelectedPhoto(photo);
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    document.body.style.overflow = "auto";
+    setSelectedPhoto(null);
   };
 
-  
   const navigatePhotos = (direction) => {
     const currentIndex = photoData.findIndex(
       (photo) => photo.id === selectedPhoto.id
     );
     let newIndex;
-  
+
     if (direction === "prev") {
       newIndex = currentIndex === 0 ? photoData.length - 1 : currentIndex - 1;
     } else {
       newIndex = currentIndex === photoData.length - 1 ? 0 : currentIndex + 1;
     }
-  
+
     setSelectedPhoto(photoData[newIndex]);
   };
-  
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleKeyDown = (e) => {
@@ -345,20 +361,17 @@ export default function PhotoGallery() {
           navigatePhotos("next");
         }
       };
-  
+
       window.addEventListener("keydown", handleKeyDown);
-  
+
       return () => {
         window.removeEventListener("keydown", handleKeyDown);
       };
     }
-  }, []);
+  }, [selectedPhoto]);
 
-  const filteredPhotos = activeSkill
-    ? photoData.filter((photo) => photo.category === activeSkill)
-    : photoData;
-  const visiblePhotos = filteredPhotos.slice(0, visibleCount);
-  const canLoadMore = visibleCount < filteredPhotos.length;
+  const visiblePhotos = photoData.slice(0, visibleCount);
+  const canLoadMore = visibleCount < photoData.length;
 
   return (
     <GalleryContainer id="gallery">
@@ -385,7 +398,7 @@ export default function PhotoGallery() {
         )}
 
         {isModalOpen && selectedPhoto && (
-          <ModalBackdrop onClick={closeModal}>
+          <ModalPortal onClose={closeModal}>
             <ModalContent onClick={(e) => e.stopPropagation()}>
               <CloseButton onClick={closeModal}>&times;</CloseButton>
               <div
@@ -440,7 +453,7 @@ export default function PhotoGallery() {
                 </ModalCaption>
               </div>
             </ModalContent>
-          </ModalBackdrop>
+          </ModalPortal>
         )}
       </GallerySection>
     </GalleryContainer>
