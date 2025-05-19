@@ -148,7 +148,7 @@ export const LoadMoreButton = styled.button`
 `;
 
 export const ModalContent = styled.div`
-  position: relative;
+   position: relative;
   max-width: 95vw;
   max-height: 95vh;
   border-radius: 8px;
